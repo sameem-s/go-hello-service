@@ -13,6 +13,9 @@ func main() {
 		port = "3000"
 	}
 
+	http.HandleFunc("", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(w, "Your deployment is working!")
+	})
 	http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "ok")
 	})
